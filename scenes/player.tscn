@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6n6rdyypmmh3"]
+[gd_scene load_steps=14 format=3 uid="uid://b6n6rdyypmmh3"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6020d"]
 [ext_resource type="Texture2D" uid="uid://b3n7jvgqcsh6m" path="res://assets/fisherKing_.png" id="1_vf2rl"]
@@ -19,6 +19,26 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_vf2rl")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m24iu"]
+atlas = ExtResource("1_vf2rl")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i77oo"]
+atlas = ExtResource("1_vf2rl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq5gw"]
+atlas = ExtResource("1_vf2rl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yipda"]
+atlas = ExtResource("1_vf2rl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47pwn"]
+atlas = ExtResource("1_vf2rl")
+region = Rect2(96, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_l5oco"]
 animations = [{
 "frames": [{
@@ -37,6 +57,31 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m24iu")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i77oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq5gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yipda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47pwn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwmgn"]
@@ -48,9 +93,8 @@ script = ExtResource("1_6020d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_l5oco")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "idle"
-frame_progress = 0.196211
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
