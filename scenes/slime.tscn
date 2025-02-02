@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://df8kuyh137sus"]
+
+[ext_resource type="Texture2D" uid="uid://de6wrxdmlilw8" path="res://assets/slime_.png" id="1_4dv8l"]
+[ext_resource type="Script" path="res://scripts/Slime.cs" id="2_uprht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60r7c"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4uvd"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e08s0"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eskn7"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viy6q"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2kkh"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyws2"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh61x"]
+atlas = ExtResource("1_4dv8l")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onav7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60r7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4uvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e08s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eskn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viy6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2kkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyws2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh61x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Slime" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_onav7")
+autoplay = "default"
+frame_progress = 0.470435
+script = ExtResource("2_uprht")

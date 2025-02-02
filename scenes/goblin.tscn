@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgj5apfiqludl"]
+
+[ext_resource type="Texture2D" uid="uid://dlnpq32kt4cth" path="res://assets/goblin_.png" id="1_rkum8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5waod"]
+atlas = ExtResource("1_rkum8")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tpk7"]
+atlas = ExtResource("1_rkum8")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rgdj"]
+atlas = ExtResource("1_rkum8")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwu8l"]
+atlas = ExtResource("1_rkum8")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48b4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5waod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tpk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rgdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwu8l")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Goblin" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_48b4w")
+animation = &"new_animation"
